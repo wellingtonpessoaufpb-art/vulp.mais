@@ -1,0 +1,1247 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VULP+ | Planos Premium para Concursos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ----- RESET & BASE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8faff;
+      color: #1a1a2e;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ----- CORES (Roxo + Escuro) ----- */
+    :root {
+      --azul-profundo: #0d0d1a;
+      --azul-vibrante: #16162e;
+      --roxo-principal: #7c3aed;
+      --roxo-claro: #a78bfa;
+      --roxo-escuro: #4c1d95;
+      --roxo-suave: #ede7fc;
+      --branco: #ffffff;
+      --cinza-claro: #f3f0fa;
+      --sombra: 0 20px 60px rgba(26, 26, 46, 0.12);
+      --sombra-hover: 0 30px 80px rgba(124, 58, 237, 0.25);
+      --radius: 24px;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* ----- SCROLL REVEAL ----- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ----- HERO (Vivo e Profissional) ----- */
+    .hero {
+      background: linear-gradient(145deg, var(--azul-profundo) 0%, var(--azul-vibrante) 100%);
+      padding: 60px 0 80px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid var(--roxo-principal);
+    }
+
+    /* Animated gradient mesh background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle at 30% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 60%);
+      animation: floatHero 12s infinite alternate ease-in-out;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      right: -20%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle at 70% 50%, rgba(167, 139, 250, 0.08) 0%, transparent 60%);
+      animation: floatHero 15s infinite alternate-reverse ease-in-out;
+      pointer-events: none;
+    }
+
+    @keyframes floatHero {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(40px, -40px) scale(1.1); }
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      flex: 1 1 380px;
+    }
+
+    .hero-logo {
+      max-width: 200px;
+      margin-bottom: 20px;
+      display: block;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.40));
+      transition: transform var(--transition);
+    }
+    .hero-logo:hover {
+      transform: scale(1.02);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--roxo-principal);
+      color: var(--branco);
+      font-weight: 700;
+      font-size: 0.70rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+    }
+
+    .hero h1 {
+      font-size: 3.4rem;
+      font-weight: 900;
+      color: var(--branco);
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--roxo-claro), #ddd6fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 480px;
+      margin-bottom: 32px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn-primary {
+      background: var(--roxo-principal);
+      color: var(--branco);
+      font-weight: 700;
+      padding: 16px 40px;
+      border-radius: 60px;
+      font-size: 1.05rem;
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+    }
+    .btn-primary:hover::after {
+      transform: translateX(100%);
+    }
+
+    .btn-primary i {
+      transition: transform var(--transition);
+    }
+    .btn-primary:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 16px 48px rgba(124, 58, 237, 0.55);
+    }
+    .btn-primary:hover i {
+      transform: translateX(6px);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      color: var(--branco);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-size: 1rem;
+      transition: all var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-outline-light:hover {
+      background: rgba(124, 58, 237, 0.15);
+      border-color: var(--roxo-claro);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+    }
+    .hero-stats strong {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--branco);
+    }
+
+    .hero-image {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      border-radius: var(--radius);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      transition: transform var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .hero-image img:hover {
+      transform: scale(1.01);
+    }
+
+    /* ----- SEÇÃO BENEFÍCIOS (Cards) ----- */
+    .section-why {
+      padding: 80px 0 60px;
+      background: var(--branco);
+    }
+
+    .section-why h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--azul-profundo);
+      margin-bottom: 12px;
+    }
+
+    .section-why>p {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 48px;
+      color: #4a4a5e;
+      font-size: 1.1rem;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+    }
+
+    .benefit-card {
+      background: var(--cinza-claro);
+      padding: 36px 24px;
+      border-radius: var(--radius);
+      text-align: center;
+      transition: all var(--transition);
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--roxo-principal), var(--roxo-claro));
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .benefit-card:hover::before {
+      opacity: 1;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--roxo-principal);
+      box-shadow: var(--sombra-hover);
+    }
+
+    .benefit-card i {
+      font-size: 2.6rem;
+      color: var(--roxo-principal);
+      margin-bottom: 16px;
+      background: rgba(124, 58, 237, 0.08);
+      padding: 16px;
+      border-radius: 16px;
+      transition: all var(--transition);
+    }
+
+    .benefit-card:hover i {
+      background: var(--roxo-principal);
+      color: var(--branco);
+      transform: scale(0.95) rotate(-3deg);
+    }
+
+    .benefit-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--azul-profundo);
+      margin-bottom: 6px;
+    }
+    .benefit-card p {
+      font-size: 0.95rem;
+      color: #4a4a5e;
+    }
+
+    /* ----- CARROSSEL ANIMADO (Metodologia) ----- */
+    .section-carousel {
+      padding: 80px 0;
+      background: linear-gradient(160deg, #0d0d1a 0%, #1a1a3a 100%);
+      border-top: 3px solid var(--roxo-principal);
+      border-bottom: 3px solid var(--roxo-principal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-carousel::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 40%, rgba(124, 58, 237, 0.06) 0%, transparent 50%);
+      animation: rotateBg 30s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes rotateBg {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .section-carousel .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-carousel .section-tag {
+      text-align: center;
+      font-weight: 700;
+      color: var(--roxo-claro);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      margin-bottom: 8px;
+    }
+
+    .section-carousel h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--branco);
+      margin-bottom: 12px;
+    }
+
+    .section-carousel .subhead {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 48px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.05rem;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .carousel-slide .slide-icon {
+      font-size: 4rem;
+      color: var(--roxo-claro);
+      margin-bottom: 24px;
+      background: rgba(124, 58, 237, 0.12);
+      padding: 24px;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+      border: 1px solid rgba(167, 139, 250, 0.15);
+    }
+
+    .carousel-slide:hover .slide-icon {
+      background: var(--roxo-principal);
+      color: var(--branco);
+      transform: scale(1.05) rotate(-2deg);
+      box-shadow: 0 16px 48px rgba(124, 58, 237, 0.3);
+    }
+
+    .carousel-slide h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--branco);
+      margin-bottom: 12px;
+    }
+
+    .carousel-slide p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .carousel-slide .slide-tag {
+      margin-top: 20px;
+      display: inline-block;
+      background: rgba(124, 58, 237, 0.2);
+      color: var(--roxo-claro);
+      padding: 6px 20px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      border: 1px solid rgba(167, 139, 250, 0.1);
+    }
+
+    /* Controles do Carrossel */
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .carousel-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--branco);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-btn:hover {
+      background: var(--roxo-principal);
+      border-color: var(--roxo-principal);
+      transform: scale(1.08);
+      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.3);
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 12px;
+    }
+
+    .carousel-dots .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      transition: all var(--transition);
+      border: none;
+    }
+
+    .carousel-dots .dot.active {
+      background: var(--roxo-claro);
+      box-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+      width: 32px;
+      border-radius: 12px;
+    }
+
+    .carousel-dots .dot:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ----- PLANOS (Aprimorados) ----- */
+    .section-plans {
+      padding: 80px 0;
+      background: var(--branco);
+    }
+
+    .section-plans .section-tag {
+      text-align: center;
+      font-weight: 700;
+      color: var(--roxo-principal);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      margin-bottom: 8px;
+    }
+
+    .section-plans h2 {
+      text-align: center;
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--azul-profundo);
+      margin-bottom: 12px;
+    }
+
+    .section-plans .subhead {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 48px;
+      color: #4a4a5e;
+      font-size: 1.1rem;
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .plan-card {
+      background: var(--branco);
+      border-radius: var(--radius);
+      padding: 40px 28px 32px;
+      box-shadow: var(--sombra);
+      transition: all var(--transition);
+      border: 1px solid rgba(26, 26, 46, 0.04);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .plan-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius);
+      padding: 1px;
+      background: linear-gradient(135deg, transparent, transparent, rgba(124, 58, 237, 0.1), transparent);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-14px);
+      box-shadow: var(--sombra-hover);
+      border-color: var(--roxo-principal);
+    }
+
+    .plan-card .badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--roxo-principal);
+      color: var(--branco);
+      font-weight: 700;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 4px 16px;
+      border-radius: 100px;
+      box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+    }
+
+    .plan-card .plan-name {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--azul-profundo);
+      margin-bottom: 4px;
+    }
+
+    .plan-card .plan-sub {
+      font-size: 0.9rem;
+      color: #4a4a5e;
+      margin-bottom: 16px;
+      min-height: 44px;
+    }
+
+    .plan-card .price {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--roxo-escuro);
+      margin-bottom: 4px;
+    }
+    .plan-card .price small {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #4a4a5e;
+    }
+
+    .plan-card .divider {
+      width: 60px;
+      height: 4px;
+      background: var(--roxo-principal);
+      border-radius: 4px;
+      margin: 16px 0 20px;
+    }
+
+    .plan-card ul {
+      list-style: none;
+      margin-bottom: 28px;
+      flex: 1;
+    }
+
+    .plan-card ul li {
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: #1a1a2e;
+    }
+
+    .plan-card ul li i {
+      color: var(--roxo-principal);
+      font-size: 0.9rem;
+      width: 20px;
+      text-align: center;
+    }
+
+    .plan-card .btn-plan {
+      background: var(--azul-profundo);
+      color: var(--branco);
+      font-weight: 700;
+      padding: 14px 0;
+      border-radius: 60px;
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      margin-top: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .plan-card .btn-plan::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+    }
+    .plan-card .btn-plan:hover::after {
+      transform: translateX(100%);
+    }
+
+    .plan-card .btn-plan i {
+      transition: transform var(--transition);
+    }
+    .plan-card .btn-plan:hover {
+      background: var(--roxo-principal);
+      color: var(--branco);
+      transform: scale(1.02);
+      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.35);
+    }
+    .plan-card .btn-plan:hover i {
+      transform: translateX(4px);
+    }
+
+    .plan-card.destaque {
+      border: 2px solid var(--roxo-principal);
+      background: linear-gradient(145deg, #ffffff, #f8f5ff);
+      transform: scale(1.02);
+    }
+    .plan-card.destaque:hover {
+      transform: scale(1.05) translateY(-10px);
+    }
+
+    .plan-card .vagas-limitadas {
+      display: inline-block;
+      margin-top: 12px;
+      font-weight: 700;
+      color: #b91c1c;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      background: rgba(185, 28, 28, 0.05);
+      padding: 4px 16px;
+      border-radius: 100px;
+    }
+
+    /* ----- FAQ ----- */
+    .section-faq {
+      padding: 80px 0;
+      background: var(--cinza-claro);
+    }
+
+    .section-faq h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--azul-profundo);
+      margin-bottom: 48px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--branco);
+      padding: 24px 28px;
+      border-radius: var(--radius);
+      transition: all var(--transition);
+      cursor: pointer;
+      border-left: 4px solid transparent;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+    .faq-item:hover {
+      border-left-color: var(--roxo-principal);
+      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.06);
+      transform: translateX(6px);
+    }
+
+    .faq-item h4 {
+      font-weight: 700;
+      color: var(--azul-profundo);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-item h4 i {
+      color: var(--roxo-principal);
+      transition: transform var(--transition);
+    }
+    .faq-item p {
+      color: #4a4a5e;
+      font-size: 0.95rem;
+      display: none;
+      margin-top: 8px;
+      padding-right: 16px;
+    }
+    .faq-item.active p {
+      display: block;
+    }
+    .faq-item.active h4 i {
+      transform: rotate(180deg);
+    }
+
+    /* ----- FOOTER CTA ----- */
+    .footer-cta {
+      background: linear-gradient(145deg, var(--azul-profundo), #0d0d1a);
+      padding: 60px 0;
+      text-align: center;
+      border-top: 3px solid var(--roxo-principal);
+    }
+
+    .footer-cta h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--branco);
+      margin-bottom: 12px;
+    }
+
+    .footer-cta p {
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 500px;
+      margin: 0 auto 32px;
+      font-size: 1.1rem;
+    }
+
+    .footer-copy {
+      background: var(--azul-profundo);
+      padding: 24px 0;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.2);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    /* ----- RESPONSIVIDADE ----- */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero-grid {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-cta-group {
+        justify-content: center;
+      }
+      .hero-stats {
+        justify-content: center;
+      }
+      .plan-card.destaque {
+        transform: scale(1);
+      }
+      .plan-card.destaque:hover {
+        transform: scale(1.02) translateY(-6px);
+      }
+      .section-plans h2 {
+        font-size: 2rem;
+      }
+      .carousel-slide {
+        padding: 40px 20px;
+      }
+      .carousel-slide h3 {
+        font-size: 1.6rem;
+      }
+      .carousel-slide .slide-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .btn-primary {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+      }
+      .plan-card {
+        padding: 28px 18px;
+      }
+      .carousel-controls {
+        gap: 16px;
+      }
+      .carousel-btn {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== HERO ====== -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <img src="https://res.cloudinary.com/dqmuoc3o0/image/upload/v1781824535/Sem_t%C3%ADtulo_jbf8wr.png" alt="VULP+" class="hero-logo" />
+        <div class="hero-badge"><i class="fas fa-arrow-right" style="margin-right:8px;"></i> Metodologia Exclusiva</div>
+        <h1>O plano certo para <span>sua aprovação</span></h1>
+        <p>Estrutura, mentoria e tecnologia para transformar sua preparação. Escolha o plano VULP+ ideal para você.</p>
+        <div class="hero-cta-group">
+          <a href="#planos" class="btn-primary"><i class="fas fa-arrow-right"></i> Ver planos</a>
+          <a href="#faq" class="btn-outline-light"><i class="fas fa-circle-question"></i> Dúvidas</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>+5 anos</strong> <span>de experiência</span></div>
+          <div><strong>100%</strong> <span>foco em resultados</span></div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Estudante focado" style="max-width:340px; border-radius:20px;" />
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== BENEFÍCIOS (Cards) ====== -->
+  <section class="section-why">
+    <div class="container">
+      <h2 class="reveal">Por que o VULP+ é referência?</h2>
+      <p class="reveal">Uma metodologia que combina estrutura, mentoria e tecnologia para acelerar sua preparação.</p>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal">
+          <i class="fas fa-road"></i>
+          <h3>Trilha pronta</h3>
+          <p>Você não perde tempo com o que estudar. A trilha já está organizada.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <i class="fas fa-users"></i>
+          <h3>Mentoria ao vivo</h3>
+          <p>Encontros semanais e grupo VIP para tirar dúvidas e manter o foco.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <i class="fas fa-mobile-screen-button"></i>
+          <h3>App de questões</h3>
+          <p>Pratique onde estiver com nosso aplicativo exclusivo de questões.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <i class="fas fa-chart-line"></i>
+          <h3>Acompanhamento</h3>
+          <p>Evolução monitorada e ajustes personalizados conforme seu desempenho.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CARROSSEL ANIMADO (Metodologia) ====== -->
+  <section class="section-carousel" id="metodologia">
+    <div class="container">
+      <div class="section-tag reveal"><i class="fas fa-layer-group"></i> Nossa metodologia</div>
+      <h2 class="reveal">Como aceleramos sua aprovação</h2>
+      <p class="subhead reveal">Conheça os pilares que tornam o VULP+ uma escolha estratégica para concurseiros de alto desempenho.</p>
+
+      <div class="carousel-wrapper reveal">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-icon"><i class="fas fa-puzzle-piece"></i></div>
+            <h3>Estrutura Completa</h3>
+            <p>Trilha de estudos pronta, cronograma semanal organizado e materiais selecionados para que você comece com o pé direito, sem perder tempo com planejamento.</p>
+            <span class="slide-tag">Organização</span>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-icon"><i class="fas fa-comments"></i></div>
+            <h3>Mentoria Estratégica</h3>
+            <p>Encontros semanais ao vivo, grupo VIP de WhatsApp e acompanhamento contínuo para ajustar a rota, esclarecer dúvidas e manter a motivação em alta.</p>
+            <span class="slide-tag">Suporte ativo</span>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-slide">
+            <div class="slide-icon"><i class="fas fa-brain"></i></div>
+            <h3>Prática Inteligente</h3>
+            <p>Simulados com direcionamento por etapas, revisões guiadas e um aplicativo de questões com milhares de exercícios para consolidar o aprendizado.</p>
+            <span class="slide-tag">Performance</span>
+          </div>
+          <!-- Slide 4 -->
+          <div class="carousel-slide">
+            <div class="slide-icon"><i class="fas fa-bullseye"></i></div>
+            <h3>Acompanhamento Individual</h3>
+            <p>No plano Elite, você conta com mentoria individualizada, ajustes personalizados e prioridade no suporte para maximizar seus resultados.</p>
+            <span class="slide-tag">Exclusividade</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PLANOS ====== -->
+  <section class="section-plans" id="planos">
+    <div class="container">
+      <div class="section-tag reveal"><i class="fas fa-crown"></i> escolha seu plano</div>
+      <h2 class="reveal">Invista na sua aprovação</h2>
+      <p class="subhead reveal">Comece com o VULP Start, acelere com o Focus ou tenha exclusividade total com o Elite.</p>
+
+      <div class="plans-grid">
+        <!-- START -->
+        <div class="plan-card reveal">
+          <div class="plan-name">VULP START</div>
+          <div class="plan-sub">Ideal para quem está começando ou ainda não tem uma rotina de estudos.</div>
+          <div class="price">R$ 39,00 <small>/mês</small></div>
+          <div class="divider"></div>
+          <ul>
+            <li><i class="fas fa-check"></i> Trilha de estudos pronta</li>
+            <li><i class="fas fa-check"></i> Cronograma semanal organizado</li>
+            <li><i class="fas fa-check"></i> Material de leitura completo</li>
+            <li><i class="fas fa-check"></i> Orientações para começar</li>
+            <li><i class="fas fa-check"></i> Indicação de aulas no YouTube</li>
+            <li><i class="fas fa-check"></i> Aplicativo de questões</li>
+            <li><i class="fas fa-check"></i> Aplicativo de estudos</li>
+          </ul>
+          <button class="btn-plan" onclick="window.open('https://wa.me/5583999121539?text=Olá,%20quero%20saber%20mais%20sobre%20o%20plano%20VULP%20START!','_blank')">
+            <i class="fab fa-whatsapp"></i> Começar agora
+          </button>
+        </div>
+
+        <!-- FOCUS -->
+        <div class="plan-card destaque reveal">
+          <span class="badge"><i class="fas fa-fire"></i> Mais escolhido</span>
+          <div class="plan-name">VULP FOCUS</div>
+          <div class="plan-sub">Nosso plano mais completo para quem quer aceleração e suporte estratégico.</div>
+          <div class="price">R$ 89,00 <small>/mês</small></div>
+          <div class="divider"></div>
+          <ul>
+            <li><i class="fas fa-check"></i> Tudo do VULP START</li>
+            <li><i class="fas fa-check"></i> Materiais exclusivos</li>
+            <li><i class="fas fa-check"></i> Revisões guiadas</li>
+            <li><i class="fas fa-check"></i> Simulados com direcionamento</li>
+            <li><i class="fas fa-check"></i> Encontros semanais ao vivo</li>
+            <li><i class="fas fa-check"></i> Grupo VIP de WhatsApp</li>
+            <li><i class="fas fa-check"></i> Acompanhamento de dúvidas</li>
+          </ul>
+          <button class="btn-plan" onclick="window.open('https://wa.me/5583999121539?text=Olá,%20quero%20saber%20mais%20sobre%20o%20plano%20VULP%20FOCUS!','_blank')">
+            <i class="fab fa-whatsapp"></i> Quero acelerar
+          </button>
+        </div>
+
+        <!-- ELITE -->
+        <div class="plan-card reveal">
+          <div class="plan-name">VULP ELITE</div>
+          <div class="plan-sub">O plano premium com mentoria individualizada e vagas limitadas.</div>
+          <div class="price">R$ 197,00 <small>/mês</small></div>
+          <div class="divider"></div>
+          <ul>
+            <li><i class="fas fa-check"></i> Tudo do VULP FOCUS</li>
+            <li><i class="fas fa-check"></i> Encontro direto com mentor</li>
+            <li><i class="fas fa-check"></i> Mentor individualizado</li>
+            <li><i class="fas fa-check"></i> Ajustes personalizados</li>
+            <li><i class="fas fa-check"></i> Prioridade no suporte</li>
+            <li><i class="fas fa-check"></i> Orientações estratégicas</li>
+            <li><i class="fas fa-check"></i> Correção de rota contínua</li>
+          </ul>
+          <span class="vagas-limitadas"><i class="fas fa-exclamation-triangle"></i> Vagas limitadas</span>
+          <button class="btn-plan" onclick="window.open('https://wa.me/5583999121539?text=Olá,%20quero%20saber%20mais%20sobre%20o%20plano%20VULP%20ELITE!','_blank')">
+            <i class="fab fa-whatsapp"></i> Garantir vaga
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FAQ ====== -->
+  <section class="section-faq" id="faq">
+    <div class="container">
+      <h2 class="reveal">Perguntas frequentes</h2>
+      <div class="faq-grid">
+        <div class="faq-item active reveal">
+          <h4><span>Como funciona o período de teste?</span> <i class="fas fa-chevron-down"></i></h4>
+          <p>Você pode cancelar nos primeiros 7 dias e receber 100% do valor de volta, sem burocracia.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4><span>Posso mudar de plano depois?</span> <i class="fas fa-chevron-down"></i></h4>
+          <p>Sim! Você pode fazer upgrade ou downgrade a qualquer momento, com ajuste proporcional.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4><span>O material é atualizado?</span> <i class="fas fa-chevron-down"></i></h4>
+          <p>Sim, todos os materiais e trilhas são revisados mensalmente para acompanhar os editais.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4><span>Como acesso os conteúdos?</span> <i class="fas fa-chevron-down"></i></h4>
+          <p>Você recebe acesso imediato à plataforma VULP+ com todos os materiais e ferramentas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA FINAL ====== -->
+  <section class="footer-cta">
+    <div class="container">
+      <h2 class="reveal">Sua aprovação começa aqui</h2>
+      <p class="reveal">Escolha o plano VULP+ e dê o primeiro passo rumo à sua vaga.</p>
+      <a href="#planos" class="btn-primary reveal"><i class="fas fa-arrow-right"></i> Ver planos agora</a>
+    </div>
+  </section>
+
+  <footer class="footer-copy">
+    <div class="container">
+      &copy; 2026 VULP+ · Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- ====== SCRIPTS ====== -->
+  <script>
+    (function() {
+      // ----- REVEAL ON SCROLL -----
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(el => observer.observe(el));
+
+      // ----- CARROSSEL -----
+      const track = document.getElementById('carouselTrack');
+      const slides = track.querySelectorAll('.carousel-slide');
+      const totalSlides = slides.length;
+      let currentIndex = 0;
+      let autoplayInterval = null;
+
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('carouselDots');
+
+      // Criar dots
+      slides.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.classList.add('dot');
+        if (idx === 0) dot.classList.add('active');
+        dot.setAttribute('data-index', idx);
+        dot.addEventListener('click', () => goToSlide(idx));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = dotsContainer.querySelectorAll('.dot');
+
+      function goToSlide(index) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        currentIndex = index;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentIndex);
+        });
+      }
+
+      function nextSlide() {
+        goToSlide(currentIndex + 1);
+      }
+
+      function prevSlide() {
+        goToSlide(currentIndex - 1);
+      }
+
+      function startAutoplay() {
+        if (autoplayInterval) clearInterval(autoplayInterval);
+        autoplayInterval = setInterval(nextSlide, 5000);
+      }
+
+      function pauseAutoplay() {
+        if (autoplayInterval) {
+          clearInterval(autoplayInterval);
+          autoplayInterval = null;
+        }
+      }
+
+      // Eventos dos botões
+      nextBtn.addEventListener('click', () => {
+        pauseAutoplay();
+        nextSlide();
+        startAutoplay();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        pauseAutoplay();
+        prevSlide();
+        startAutoplay();
+      });
+
+      // Pausar no hover do carrossel
+      const carouselWrapper = document.querySelector('.carousel-wrapper');
+      carouselWrapper.addEventListener('mouseenter', pauseAutoplay);
+      carouselWrapper.addEventListener('mouseleave', startAutoplay);
+
+      // Toque (swipe) para mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      carouselWrapper.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        pauseAutoplay();
+      }, { passive: true });
+
+      carouselWrapper.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) {
+            nextSlide();
+          } else {
+            prevSlide();
+          }
+        }
+        startAutoplay();
+      }, { passive: true });
+
+      // Iniciar autoplay
+      startAutoplay();
+
+      // ----- FAQ TOGGLE -----
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const isActive = this.classList.contains('active');
+          faqItems.forEach(i => i.classList.remove('active'));
+          if (!isActive) {
+            this.classList.add('active');
+          }
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>
