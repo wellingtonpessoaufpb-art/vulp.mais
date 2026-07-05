@@ -377,7 +377,7 @@
       color: #4a4a5e;
     }
 
-    /* ---- DEPOIMENTOS ---- */
+    /* ---- DEPOIMENTOS (CARROSSEL + GRID) ---- */
     .section-depoimentos {
       padding: 80px 0;
       background: var(--branco);
@@ -399,10 +399,127 @@
       font-size: 1.1rem;
     }
 
+    /* Carrossel */
+    .carousel-container {
+      max-width: 700px;
+      margin: 0 auto 48px;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--sombra);
+      background: var(--cinza-claro);
+      padding: 32px 24px;
+    }
+
+    .carousel-slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      padding: 8px;
+    }
+
+    .carousel-slide .stars {
+      color: #f59e0b;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    .carousel-slide blockquote {
+      font-style: italic;
+      color: #1a1a2e;
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .carousel-slide .autor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .carousel-slide .avatar-placeholder {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--roxo-principal);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .carousel-slide .nome {
+      font-weight: 700;
+      color: var(--azul-profundo);
+    }
+    .carousel-slide .cargo {
+      font-size: 0.8rem;
+      color: #4a4a5e;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--roxo-principal);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background 0.2s;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.8;
+    }
+    .carousel-btn:hover {
+      background: var(--roxo-escuro);
+      opacity: 1;
+    }
+    .carousel-btn.prev {
+      left: 8px;
+    }
+    .carousel-btn.next {
+      right: 8px;
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .carousel-indicators span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .carousel-indicators span.active {
+      background: var(--roxo-principal);
+    }
+
+    /* Grid de depoimentos (mantida) */
     .depoimentos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 32px;
+      margin-top: 24px;
     }
 
     .depoimento-card {
@@ -440,7 +557,7 @@
       gap: 12px;
     }
 
-    .depoimento-card .autor .avatar-placeholder {
+    .depoimento-card .avatar-placeholder {
       width: 44px;
       height: 44px;
       border-radius: 50%;
@@ -454,11 +571,11 @@
       flex-shrink: 0;
     }
 
-    .depoimento-card .autor .nome {
+    .depoimento-card .nome {
       font-weight: 700;
       color: var(--azul-profundo);
     }
-    .depoimento-card .autor .cargo {
+    .depoimento-card .cargo {
       font-size: 0.8rem;
       color: #4a4a5e;
     }
@@ -597,6 +714,18 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       padding: 4px 14px;
+      border-radius: 100px;
+    }
+
+    .plan-card .vagas-limitadas {
+      display: inline-block;
+      margin: 8px auto 0;
+      font-weight: 700;
+      color: #b91c1c;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      background: rgba(185, 28, 28, 0.08);
+      padding: 4px 16px;
       border-radius: 100px;
     }
 
@@ -892,6 +1021,11 @@
       .section-jornada h2 {
         font-size: 2rem;
       }
+      .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+      }
     }
 
     @media (max-width: 480px) {
@@ -904,6 +1038,14 @@
       }
       .plan-card {
         padding: 28px 18px;
+      }
+      .carousel-container {
+        padding: 20px 16px;
+      }
+      .carousel-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -995,11 +1137,46 @@
     </div>
   </section>
 
-  <!-- DEPOIMENTOS -->
+  <!-- DEPOIMENTOS (CARROSSEL + GRID) -->
   <section class="section-depoimentos">
     <div class="container">
       <h2 class="reveal">Quem já viveu a Jornada</h2>
       <p class="subhead reveal">Histórias reais de quem transformou a preparação e conquistou mais tempo e foco com a VULP+.</p>
+
+      <!-- CARROSSEL -->
+      <div class="carousel-container reveal">
+        <div class="carousel-slides" id="carouselSlides">
+          <div class="carousel-slide">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <blockquote>"Depois que entrei, estou ganhando tempo, sei exatamente o que estudar todos os dias. A Jornada da Aprovação me deu direção e foco. Recomendo!"</blockquote>
+            <div class="autor">
+              <div class="avatar-placeholder">AC</div>
+              <div><div class="nome">Ana C.</div><div class="cargo">Aprovada para a UFMG</div></div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <blockquote>"Nunca estudei tão organizado. A Jornada me mostra o que fazer, e eu só executo. Minha ansiedade caiu e a produtividade disparou."</blockquote>
+            <div class="autor">
+              <div class="avatar-placeholder">RS</div>
+              <div><div class="nome">Rafael S.</div><div class="cargo">Aprovado para o IFSP</div></div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <blockquote>"Eu vivia perdida entre tantos conteúdos. Agora sei o que priorizar e estudo com confiança. A Jornada é um divisor de águas."</blockquote>
+            <div class="autor">
+              <div class="avatar-placeholder">ML</div>
+              <div><div class="nome">Mariana L.</div><div class="cargo">Aprovada para a UFRJ</div></div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+        <div class="carousel-indicators" id="indicators"></div>
+      </div>
+
+      <!-- GRID (mantida) -->
       <div class="depoimentos-grid">
         <div class="depoimento-card reveal">
           <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -1053,6 +1230,7 @@
             <li><i class="fas fa-check"></i> Ferramentas de organização</li>
             <li><i class="fas fa-check"></i> Atualizações de editais</li>
           </ul>
+          <span class="vagas-limitadas"><i class="fas fa-exclamation-triangle"></i> Vagas limitadas</span>
           <button class="btn-saiba" onclick="abrirModal('basico')"><i class="fas fa-circle-info"></i> Saiba mais</button>
         </div>
 
@@ -1071,6 +1249,7 @@
             <li><i class="fas fa-check"></i> Orientação de estudos personalizada</li>
             <li><i class="fas fa-check"></i> Correção de rota contínua</li>
           </ul>
+          <span class="vagas-limitadas"><i class="fas fa-exclamation-triangle"></i> Vagas limitadas</span>
           <button class="btn-saiba" onclick="abrirModal('premium')"><i class="fas fa-circle-info"></i> Saiba mais</button>
         </div>
       </div>
@@ -1237,6 +1416,59 @@
         });
       }
     });
+
+    // Carrossel
+    (function() {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const totalSlides = slides.length;
+      let currentIndex = 0;
+      const slidesContainer = document.getElementById('carouselSlides');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const indicators = document.getElementById('indicators');
+
+      // Criar indicadores
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        dot.addEventListener('click', function() {
+          goToSlide(parseInt(this.dataset.index));
+        });
+        indicators.appendChild(dot);
+      }
+
+      function goToSlide(index) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        currentIndex = index;
+        slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        // Atualizar indicadores
+        document.querySelectorAll('.carousel-indicators span').forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentIndex);
+        });
+      }
+
+      prevBtn.addEventListener('click', function() {
+        goToSlide(currentIndex - 1);
+      });
+
+      nextBtn.addEventListener('click', function() {
+        goToSlide(currentIndex + 1);
+      });
+
+      // Avanço automático a cada 6 segundos
+      let autoSlide = setInterval(() => goToSlide(currentIndex + 1), 6000);
+      // Pausar ao passar o mouse
+      const carouselContainer = document.querySelector('.carousel-container');
+      carouselContainer.addEventListener('mouseenter', () => clearInterval(autoSlide));
+      carouselContainer.addEventListener('mouseleave', () => {
+        autoSlide = setInterval(() => goToSlide(currentIndex + 1), 6000);
+      });
+
+      // Inicializar
+      goToSlide(0);
+    })();
   </script>
 </body>
 </html>
