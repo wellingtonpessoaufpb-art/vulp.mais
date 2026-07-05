@@ -1,16 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VULP+ | Planos Premium para Concursos</title>
+  <title>VULP+ | Jornada da Aprovação para Concursos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
-    /* ----- RESET & BASE ----- */
     * {
       margin: 0;
       padding: 0;
@@ -19,11 +17,10 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f8faff;
+      background-color: #fdf8ff;
       color: #1a1a2e;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
     }
 
     a {
@@ -36,70 +33,52 @@
       padding: 0 24px;
     }
 
-    /* ----- CORES (Roxo + Escuro) ----- */
     :root {
       --azul-profundo: #0d0d1a;
-      --azul-vibrante: #16162e;
+      --azul-vibrante: #1a1a3a;
       --roxo-principal: #7c3aed;
       --roxo-claro: #a78bfa;
-      --roxo-escuro: #4c1d95;
-      --roxo-suave: #ede7fc;
+      --roxo-escuro: #5b21b6;
+      --roxo-suave: #ede9fe;
+      --amarelo: #fbbf24;
+      --laranja: #f97316;
       --branco: #ffffff;
-      --cinza-claro: #f3f0fa;
+      --cinza-claro: #f5f0ff;
       --sombra: 0 20px 60px rgba(26, 26, 46, 0.12);
-      --sombra-hover: 0 30px 80px rgba(124, 58, 237, 0.25);
+      --sombra-hover: 0 30px 80px rgba(124, 58, 237, 0.20);
       --radius: 24px;
-      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    /* ----- SCROLL REVEAL ----- */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* ----- HERO (Vivo e Profissional) ----- */
+    /* ---- HERO ---- */
     .hero {
-      background: linear-gradient(145deg, var(--azul-profundo) 0%, var(--azul-vibrante) 100%);
+      background: linear-gradient(145deg, var(--azul-profundo) 0%, #2d1b4e 100%);
       padding: 60px 0 80px;
       position: relative;
       overflow: hidden;
-      border-bottom: 3px solid var(--roxo-principal);
+      border-bottom: 4px solid var(--roxo-principal);
     }
 
-    /* Animated gradient mesh background */
     .hero::before {
       content: '';
       position: absolute;
-      top: -30%;
-      left: -20%;
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle at 30% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 60%);
-      animation: floatHero 12s infinite alternate ease-in-out;
+      top: -40%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
       pointer-events: none;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -30%;
-      right: -20%;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle at 70% 50%, rgba(167, 139, 250, 0.08) 0%, transparent 60%);
-      animation: floatHero 15s infinite alternate-reverse ease-in-out;
-      pointer-events: none;
-    }
-
-    @keyframes floatHero {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(40px, -40px) scale(1.1); }
     }
 
     .hero-grid {
@@ -119,7 +98,7 @@
       max-width: 200px;
       margin-bottom: 20px;
       display: block;
-      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.40));
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.30));
       transition: transform var(--transition);
     }
     .hero-logo:hover {
@@ -131,34 +110,45 @@
       background: var(--roxo-principal);
       color: var(--branco);
       font-weight: 700;
-      font-size: 0.70rem;
+      font-size: 0.75rem;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      padding: 6px 20px;
+      padding: 6px 18px;
       border-radius: 100px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+      margin-bottom: 16px;
     }
 
     .hero h1 {
-      font-size: 3.4rem;
+      font-size: 3.2rem;
       font-weight: 900;
       color: var(--branco);
-      line-height: 1.08;
+      line-height: 1.1;
       margin-bottom: 16px;
     }
 
     .hero h1 span {
-      background: linear-gradient(135deg, var(--roxo-claro), #ddd6fe);
+      background: linear-gradient(135deg, var(--roxo-claro), #fcd34d);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
+    .hero .hero-highlight {
+      display: inline-block;
+      background: rgba(251, 191, 36, 0.15);
+      padding: 4px 16px;
+      border-radius: 60px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fcd34d;
+      margin-bottom: 12px;
+      border: 1px solid rgba(251, 191, 36, 0.2);
+    }
+
     .hero p {
       font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.8);
-      max-width: 480px;
+      color: rgba(255,255,255,0.85);
+      max-width: 520px;
       margin-bottom: 32px;
     }
 
@@ -171,33 +161,18 @@
     .btn-primary {
       background: var(--roxo-principal);
       color: var(--branco);
-      font-weight: 700;
+      font-weight: 800;
       padding: 16px 40px;
       border-radius: 60px;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       border: none;
       cursor: pointer;
       transition: all var(--transition);
-      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.4);
+      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.40);
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      position: relative;
-      overflow: hidden;
+      gap: 10px;
     }
-
-    .btn-primary::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-      transform: translateX(-100%);
-      transition: transform 0.6s;
-    }
-    .btn-primary:hover::after {
-      transform: translateX(100%);
-    }
-
     .btn-primary i {
       transition: transform var(--transition);
     }
@@ -212,7 +187,7 @@
     .btn-outline-light {
       background: transparent;
       color: var(--branco);
-      border: 2px solid rgba(255, 255, 255, 0.25);
+      border: 2px solid rgba(255,255,255,0.25);
       font-weight: 600;
       padding: 14px 32px;
       border-radius: 60px;
@@ -220,27 +195,28 @@
       transition: all var(--transition);
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
     .btn-outline-light:hover {
-      background: rgba(124, 58, 237, 0.15);
+      background: rgba(255,255,255,0.06);
       border-color: var(--roxo-claro);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
     }
 
     .hero-stats {
       display: flex;
       gap: 40px;
       margin-top: 40px;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
     }
     .hero-stats strong {
       display: block;
       font-size: 1.8rem;
       font-weight: 800;
       color: var(--branco);
+    }
+    .hero-stats span {
+      font-size: 0.9rem;
     }
 
     .hero-image {
@@ -253,17 +229,18 @@
     .hero-image img {
       max-width: 100%;
       border-radius: var(--radius);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      box-shadow: var(--sombra-hover);
       transition: transform var(--transition);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: #fff;
+      padding: 8px;
     }
     .hero-image img:hover {
       transform: scale(1.01);
     }
 
-    /* ----- SEÇÃO BENEFÍCIOS (Cards) ----- */
+    /* ---- SEÇÃO POR QUE ---- */
     .section-why {
-      padding: 80px 0 60px;
+      padding: 80px 0;
       background: var(--branco);
     }
 
@@ -275,9 +252,9 @@
       margin-bottom: 12px;
     }
 
-    .section-why>p {
+    .section-why > p {
       text-align: center;
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto 48px;
       color: #4a4a5e;
       font-size: 1.1rem;
@@ -291,258 +268,205 @@
 
     .benefit-card {
       background: var(--cinza-claro);
-      padding: 36px 24px;
+      padding: 32px 24px;
       border-radius: var(--radius);
       text-align: center;
       transition: all var(--transition);
       border: 1px solid transparent;
-      position: relative;
-      overflow: hidden;
     }
-
-    .benefit-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--roxo-principal), var(--roxo-claro));
-      opacity: 0;
-      transition: opacity var(--transition);
-    }
-
-    .benefit-card:hover::before {
-      opacity: 1;
-    }
-
     .benefit-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       border-color: var(--roxo-principal);
-      box-shadow: var(--sombra-hover);
+      box-shadow: var(--sombra);
     }
 
     .benefit-card i {
-      font-size: 2.6rem;
+      font-size: 2.4rem;
       color: var(--roxo-principal);
-      margin-bottom: 16px;
-      background: rgba(124, 58, 237, 0.08);
-      padding: 16px;
-      border-radius: 16px;
-      transition: all var(--transition);
+      margin-bottom: 12px;
     }
-
-    .benefit-card:hover i {
-      background: var(--roxo-principal);
-      color: var(--branco);
-      transform: scale(0.95) rotate(-3deg);
-    }
-
     .benefit-card h3 {
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--azul-profundo);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .benefit-card p {
       font-size: 0.95rem;
       color: #4a4a5e;
     }
 
-    /* ----- CARROSSEL ANIMADO (Metodologia) ----- */
-    .section-carousel {
+    /* ---- COMO FUNCIONA A JORNADA ---- */
+    .section-jornada {
       padding: 80px 0;
-      background: linear-gradient(160deg, #0d0d1a 0%, #1a1a3a 100%);
-      border-top: 3px solid var(--roxo-principal);
-      border-bottom: 3px solid var(--roxo-principal);
-      position: relative;
-      overflow: hidden;
+      background: linear-gradient(180deg, #fdf8ff 0%, #f3ebff 100%);
     }
 
-    .section-carousel::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 30% 40%, rgba(124, 58, 237, 0.06) 0%, transparent 50%);
-      animation: rotateBg 30s linear infinite;
-      pointer-events: none;
-    }
-
-    @keyframes rotateBg {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .section-carousel .container {
-      position: relative;
-      z-index: 2;
-    }
-
-    .section-carousel .section-tag {
+    .section-jornada .section-tag {
       text-align: center;
       font-weight: 700;
-      color: var(--roxo-claro);
+      color: var(--roxo-principal);
       letter-spacing: 2px;
       text-transform: uppercase;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       margin-bottom: 8px;
     }
 
-    .section-carousel h2 {
+    .section-jornada h2 {
+      text-align: center;
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--azul-profundo);
+      margin-bottom: 12px;
+    }
+
+    .section-jornada .subhead {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 48px;
+      color: #4a4a5e;
+      font-size: 1.1rem;
+    }
+
+    .jornada-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      counter-reset: step;
+    }
+
+    .step-card {
+      background: var(--branco);
+      padding: 32px 24px 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--sombra);
+      text-align: center;
+      transition: all var(--transition);
+      border: 1px solid rgba(26, 26, 46, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .step-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra-hover);
+      border-color: var(--roxo-principal);
+    }
+
+    .step-card .step-number {
+      display: inline-block;
+      background: var(--roxo-principal);
+      color: var(--branco);
+      font-weight: 900;
+      font-size: 1.2rem;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+
+    .step-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--azul-profundo);
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      font-size: 0.95rem;
+      color: #4a4a5e;
+    }
+
+    /* ---- DEPOIMENTOS ---- */
+    .section-depoimentos {
+      padding: 80px 0;
+      background: var(--branco);
+    }
+
+    .section-depoimentos h2 {
       text-align: center;
       font-size: 2.4rem;
       font-weight: 800;
-      color: var(--branco);
+      color: var(--azul-profundo);
       margin-bottom: 12px;
     }
 
-    .section-carousel .subhead {
+    .section-depoimentos .subhead {
       text-align: center;
-      max-width: 560px;
-      margin: 0 auto 48px;
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 1.05rem;
-    }
-
-    .carousel-wrapper {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      will-change: transform;
-    }
-
-    .carousel-slide {
-      min-width: 100%;
-      padding: 60px 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .carousel-slide .slide-icon {
-      font-size: 4rem;
-      color: var(--roxo-claro);
-      margin-bottom: 24px;
-      background: rgba(124, 58, 237, 0.12);
-      padding: 24px;
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all var(--transition);
-      border: 1px solid rgba(167, 139, 250, 0.15);
-    }
-
-    .carousel-slide:hover .slide-icon {
-      background: var(--roxo-principal);
-      color: var(--branco);
-      transform: scale(1.05) rotate(-2deg);
-      box-shadow: 0 16px 48px rgba(124, 58, 237, 0.3);
-    }
-
-    .carousel-slide h3 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--branco);
-      margin-bottom: 12px;
-    }
-
-    .carousel-slide p {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.75);
       max-width: 600px;
-      line-height: 1.7;
+      margin: 0 auto 48px;
+      color: #4a4a5e;
+      font-size: 1.1rem;
     }
 
-    .carousel-slide .slide-tag {
-      margin-top: 20px;
-      display: inline-block;
-      background: rgba(124, 58, 237, 0.2);
-      color: var(--roxo-claro);
-      padding: 6px 20px;
-      border-radius: 100px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      border: 1px solid rgba(167, 139, 250, 0.1);
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
     }
 
-    /* Controles do Carrossel */
-    .carousel-controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
-      margin-top: 36px;
-    }
-
-    .carousel-btn {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--branco);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      cursor: pointer;
+    .depoimento-card {
+      background: var(--cinza-claro);
+      padding: 28px 24px;
+      border-radius: var(--radius);
       transition: all var(--transition);
+      border: 1px solid transparent;
+      position: relative;
+    }
+    .depoimento-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--roxo-principal);
+      box-shadow: var(--sombra);
+    }
+
+    .depoimento-card .stars {
+      color: #f59e0b;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    .depoimento-card blockquote {
+      font-style: italic;
+      color: #1a1a2e;
+      margin-bottom: 16px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .depoimento-card .autor {
       display: flex;
       align-items: center;
-      justify-content: center;
-    }
-
-    .carousel-btn:hover {
-      background: var(--roxo-principal);
-      border-color: var(--roxo-principal);
-      transform: scale(1.08);
-      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.3);
-    }
-
-    .carousel-dots {
-      display: flex;
       gap: 12px;
     }
 
-    .carousel-dots .dot {
-      width: 12px;
-      height: 12px;
+    .depoimento-card .autor .avatar-placeholder {
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
-      cursor: pointer;
-      transition: all var(--transition);
-      border: none;
+      background: var(--roxo-principal);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
     }
 
-    .carousel-dots .dot.active {
-      background: var(--roxo-claro);
-      box-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
-      width: 32px;
-      border-radius: 12px;
+    .depoimento-card .autor .nome {
+      font-weight: 700;
+      color: var(--azul-profundo);
+    }
+    .depoimento-card .autor .cargo {
+      font-size: 0.8rem;
+      color: #4a4a5e;
     }
 
-    .carousel-dots .dot:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
-
-    /* ----- PLANOS (Aprimorados) ----- */
+    /* ---- PLANOS ---- */
     .section-plans {
       padding: 80px 0;
-      background: var(--branco);
+      background: linear-gradient(180deg, #fdf8ff 0%, #f3ebff 100%);
     }
 
     .section-plans .section-tag {
@@ -551,7 +475,7 @@
       color: var(--roxo-principal);
       letter-spacing: 2px;
       text-transform: uppercase;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       margin-bottom: 8px;
     }
 
@@ -565,7 +489,7 @@
 
     .section-plans .subhead {
       text-align: center;
-      max-width: 560px;
+      max-width: 640px;
       margin: 0 auto 48px;
       color: #4a4a5e;
       font-size: 1.1rem;
@@ -573,8 +497,8 @@
 
     .plans-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
       align-items: stretch;
     }
 
@@ -584,59 +508,38 @@
       padding: 40px 28px 32px;
       box-shadow: var(--sombra);
       transition: all var(--transition);
-      border: 1px solid rgba(26, 26, 46, 0.04);
+      border: 1px solid rgba(26, 26, 46, 0.05);
       display: flex;
       flex-direction: column;
       position: relative;
       overflow: hidden;
-    }
-
-    .plan-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: var(--radius);
-      padding: 1px;
-      background: linear-gradient(135deg, transparent, transparent, rgba(124, 58, 237, 0.1), transparent);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
+      text-align: center;
     }
 
     .plan-card:hover {
-      transform: translateY(-14px);
+      transform: translateY(-12px);
       box-shadow: var(--sombra-hover);
       border-color: var(--roxo-principal);
     }
 
-    .plan-card .badge {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: var(--roxo-principal);
-      color: var(--branco);
-      font-weight: 700;
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      padding: 4px 16px;
-      border-radius: 100px;
-      box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+    .plan-icon {
+      font-size: 3.5rem;
+      color: var(--roxo-principal);
+      margin-bottom: 12px;
     }
 
     .plan-card .plan-name {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-weight: 800;
       color: var(--azul-profundo);
       margin-bottom: 4px;
     }
 
     .plan-card .plan-sub {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #4a4a5e;
       margin-bottom: 16px;
-      min-height: 44px;
+      min-height: 50px;
     }
 
     .plan-card .price {
@@ -656,101 +559,222 @@
       height: 4px;
       background: var(--roxo-principal);
       border-radius: 4px;
-      margin: 16px 0 20px;
+      margin: 16px auto 20px;
     }
 
     .plan-card ul {
       list-style: none;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       flex: 1;
+      text-align: left;
+      padding: 0 8px;
     }
 
     .plan-card ul li {
       padding: 6px 0;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       font-size: 0.95rem;
       color: #1a1a2e;
     }
 
     .plan-card ul li i {
       color: var(--roxo-principal);
-      font-size: 0.9rem;
+      font-size: 1rem;
       width: 20px;
       text-align: center;
     }
 
-    .plan-card .btn-plan {
-      background: var(--azul-profundo);
+    .plan-card .plan-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--roxo-principal);
       color: var(--branco);
+      font-weight: 800;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 14px;
+      border-radius: 100px;
+    }
+
+    .btn-saiba {
+      background: transparent;
+      color: var(--roxo-principal);
       font-weight: 700;
-      padding: 14px 0;
+      padding: 12px 0;
       border-radius: 60px;
-      border: none;
+      border: 2px solid var(--roxo-principal);
       cursor: pointer;
       transition: all var(--transition);
       font-size: 1rem;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       width: 100%;
       margin-top: 8px;
-      position: relative;
-      overflow: hidden;
     }
 
-    .plan-card .btn-plan::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-      transform: translateX(-100%);
-      transition: transform 0.6s;
-    }
-    .plan-card .btn-plan:hover::after {
-      transform: translateX(100%);
-    }
-
-    .plan-card .btn-plan i {
+    .btn-saiba i {
       transition: transform var(--transition);
     }
-    .plan-card .btn-plan:hover {
+    .btn-saiba:hover {
       background: var(--roxo-principal);
       color: var(--branco);
       transform: scale(1.02);
-      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.35);
+      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.25);
     }
-    .plan-card .btn-plan:hover i {
+    .btn-saiba:hover i {
       transform: translateX(4px);
     }
 
     .plan-card.destaque {
       border: 2px solid var(--roxo-principal);
-      background: linear-gradient(145deg, #ffffff, #f8f5ff);
+      background: linear-gradient(145deg, #ffffff, #f7f0ff);
       transform: scale(1.02);
     }
     .plan-card.destaque:hover {
-      transform: scale(1.05) translateY(-10px);
+      transform: scale(1.04) translateY(-8px);
     }
 
-    .plan-card .vagas-limitadas {
-      display: inline-block;
-      margin-top: 12px;
-      font-weight: 700;
-      color: #b91c1c;
-      font-size: 0.75rem;
-      letter-spacing: 0.5px;
-      background: rgba(185, 28, 28, 0.05);
-      padding: 4px 16px;
-      border-radius: 100px;
+    /* ---- MODAL ---- */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding: 24px;
     }
 
-    /* ----- FAQ ----- */
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--branco);
+      max-width: 720px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+      position: relative;
+      animation: fadeInUp 0.3s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #4a4a5e;
+      transition: color 0.2s;
+    }
+    .modal-close:hover {
+      color: var(--roxo-principal);
+    }
+
+    .modal h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--azul-profundo);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .modal h2 i {
+      color: var(--roxo-principal);
+      font-size: 2.2rem;
+    }
+
+    .modal .modal-sub {
+      color: #4a4a5e;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 16px;
+    }
+
+    .modal .modal-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+      margin-bottom: 24px;
+    }
+
+    .modal .modal-features li {
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: #1a1a2e;
+      padding: 4px 0;
+    }
+    .modal .modal-features li i {
+      color: var(--roxo-principal);
+      font-size: 1.1rem;
+      margin-top: 2px;
+      min-width: 20px;
+    }
+
+    .modal .modal-description {
+      background: var(--cinza-claro);
+      padding: 20px 24px;
+      border-radius: var(--radius);
+      margin-top: 8px;
+    }
+
+    .modal .modal-description p {
+      margin-bottom: 12px;
+      color: #1a1a2e;
+    }
+    .modal .modal-description p:last-child {
+      margin-bottom: 0;
+    }
+
+    .modal .btn-primary {
+      margin-top: 20px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    @media (max-width: 600px) {
+      .modal .modal-features {
+        grid-template-columns: 1fr;
+      }
+      .modal {
+        padding: 28px 20px;
+      }
+      .modal h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    /* ---- FAQ ---- */
     .section-faq {
       padding: 80px 0;
-      background: var(--cinza-claro);
+      background: var(--branco);
     }
 
     .section-faq h2 {
@@ -770,18 +794,16 @@
     }
 
     .faq-item {
-      background: var(--branco);
+      background: var(--cinza-claro);
       padding: 24px 28px;
       border-radius: var(--radius);
       transition: all var(--transition);
       cursor: pointer;
       border-left: 4px solid transparent;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
     }
     .faq-item:hover {
       border-left-color: var(--roxo-principal);
-      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.06);
-      transform: translateX(6px);
+      background: #eae3fc;
     }
 
     .faq-item h4 {
@@ -801,7 +823,6 @@
       font-size: 0.95rem;
       display: none;
       margin-top: 8px;
-      padding-right: 16px;
     }
     .faq-item.active p {
       display: block;
@@ -810,12 +831,12 @@
       transform: rotate(180deg);
     }
 
-    /* ----- FOOTER CTA ----- */
+    /* ---- RODAPÉ CTA ---- */
     .footer-cta {
-      background: linear-gradient(145deg, var(--azul-profundo), #0d0d1a);
+      background: linear-gradient(145deg, var(--azul-profundo), #2d1b4e);
       padding: 60px 0;
       text-align: center;
-      border-top: 3px solid var(--roxo-principal);
+      border-top: 4px solid var(--roxo-principal);
     }
 
     .footer-cta h2 {
@@ -826,22 +847,21 @@
     }
 
     .footer-cta p {
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255,255,255,0.7);
       max-width: 500px;
       margin: 0 auto 32px;
-      font-size: 1.1rem;
     }
 
     .footer-copy {
       background: var(--azul-profundo);
       padding: 24px 0;
       text-align: center;
-      color: rgba(255, 255, 255, 0.2);
+      color: rgba(255,255,255,0.25);
       font-size: 0.85rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.03);
+      border-top: 1px solid rgba(255,255,255,0.04);
     }
 
-    /* ----- RESPONSIVIDADE ----- */
+    /* ---- RESPONSIVO ---- */
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 2.2rem;
@@ -869,16 +889,8 @@
       .section-plans h2 {
         font-size: 2rem;
       }
-      .carousel-slide {
-        padding: 40px 20px;
-      }
-      .carousel-slide h3 {
-        font-size: 1.6rem;
-      }
-      .carousel-slide .slide-icon {
-        width: 80px;
-        height: 80px;
-        font-size: 3rem;
+      .section-jornada h2 {
+        font-size: 2rem;
       }
     }
 
@@ -888,203 +900,193 @@
       }
       .btn-primary {
         padding: 14px 28px;
-        font-size: 0.95rem;
+        font-size: 1rem;
       }
       .plan-card {
         padding: 28px 18px;
-      }
-      .carousel-controls {
-        gap: 16px;
-      }
-      .carousel-btn {
-        width: 40px;
-        height: 40px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- ====== HERO ====== -->
+  <!-- HERO -->
   <header class="hero">
     <div class="container hero-grid">
       <div class="hero-content">
         <img src="https://res.cloudinary.com/dqmuoc3o0/image/upload/v1781824535/Sem_t%C3%ADtulo_jbf8wr.png" alt="VULP+" class="hero-logo" />
-        <div class="hero-badge"><i class="fas fa-arrow-right" style="margin-right:8px;"></i> Metodologia Exclusiva</div>
-        <h1>O plano certo para <span>sua aprovação</span></h1>
-        <p>Estrutura, mentoria e tecnologia para transformar sua preparação. Escolha o plano VULP+ ideal para você.</p>
+        <div class="hero-badge"><i class="fas fa-arrow-right" style="margin-right:6px;"></i> Jornada da Aprovação</div>
+        <div class="hero-highlight">🚀 Você não precisa decidir o que estudar</div>
+        <h1>Sua aprovação começa com a <span>Jornada da Aprovação</span></h1>
+        <p>A VULP+ organiza toda a sua preparação em metas e objetivos diários. Basta seguir o cronograma estratégico e evoluir até o dia da prova. Sem perder tempo com planejamento.</p>
         <div class="hero-cta-group">
-          <a href="#planos" class="btn-primary"><i class="fas fa-arrow-right"></i> Ver planos</a>
+          <a href="#planos" class="btn-primary"><i class="fas fa-arrow-right"></i> Começar minha jornada</a>
           <a href="#faq" class="btn-outline-light"><i class="fas fa-circle-question"></i> Dúvidas</a>
         </div>
         <div class="hero-stats">
-          <div><strong>+5 anos</strong> <span>de experiência</span></div>
-          <div><strong>100%</strong> <span>foco em resultados</span></div>
+          <div><strong>+5.000</strong> <span>alunos na jornada</span></div>
+          <div><strong>87%</strong> <span>de aprovação nos últimos 12 meses</span></div>
         </div>
       </div>
       <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Estudante focado" style="max-width:340px; border-radius:20px;" />
+        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aplicativo VULP+ na prática" style="max-width:340px; border-radius:20px; background:#fff; padding:8px;" />
       </div>
     </div>
   </header>
 
-  <!-- ====== BENEFÍCIOS (Cards) ====== -->
+  <!-- POR QUE A JORNADA -->
   <section class="section-why">
     <div class="container">
-      <h2 class="reveal">Por que o VULP+ é referência?</h2>
-      <p class="reveal">Uma metodologia que combina estrutura, mentoria e tecnologia para acelerar sua preparação.</p>
+      <h2 class="reveal">Por que a Jornada da Aprovação transforma seus estudos?</h2>
+      <p class="reveal">Mais do que um aplicativo, uma metodologia que elimina a indecisão e acelera sua evolução com metas claras e acompanhamento inteligente.</p>
       <div class="benefits-grid">
         <div class="benefit-card reveal">
-          <i class="fas fa-road"></i>
-          <h3>Trilha pronta</h3>
-          <p>Você não perde tempo com o que estudar. A trilha já está organizada.</p>
+          <i class="fas fa-route"></i>
+          <h3>Jornada estruturada</h3>
+          <p>Você não perde tempo com o que estudar. A Jornada define cada passo, da teoria à revisão.</p>
         </div>
         <div class="benefit-card reveal">
-          <i class="fas fa-users"></i>
-          <h3>Mentoria ao vivo</h3>
-          <p>Encontros semanais e grupo VIP para tirar dúvidas e manter o foco.</p>
+          <i class="fas fa-chart-simple"></i>
+          <h3>Metas diárias claras</h3>
+          <p>Objetivos mensuráveis que mantêm seu foco e mostram seu progresso em tempo real.</p>
         </div>
         <div class="benefit-card reveal">
-          <i class="fas fa-mobile-screen-button"></i>
-          <h3>App de questões</h3>
-          <p>Pratique onde estiver com nosso aplicativo exclusivo de questões.</p>
+          <i class="fas fa-brain"></i>
+          <h3>Aprendizagem ativa</h3>
+          <p>Questões, simulados e revisões espaçadas para fixar o conteúdo de forma definitiva.</p>
         </div>
         <div class="benefit-card reveal">
-          <i class="fas fa-chart-line"></i>
-          <h3>Acompanhamento</h3>
-          <p>Evolução monitorada e ajustes personalizados conforme seu desempenho.</p>
+          <i class="fas fa-user-check"></i>
+          <h3>Acompanhamento contínuo</h3>
+          <p>Com o plano Premium, você tem suporte semanal e orientação para superar dificuldades.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== CARROSSEL ANIMADO (Metodologia) ====== -->
-  <section class="section-carousel" id="metodologia">
+  <!-- COMO FUNCIONA A JORNADA -->
+  <section class="section-jornada">
     <div class="container">
-      <div class="section-tag reveal"><i class="fas fa-layer-group"></i> Nossa metodologia</div>
-      <h2 class="reveal">Como aceleramos sua aprovação</h2>
-      <p class="subhead reveal">Conheça os pilares que tornam o VULP+ uma escolha estratégica para concurseiros de alto desempenho.</p>
-
-      <div class="carousel-wrapper reveal">
-        <div class="carousel-track" id="carouselTrack">
-          <!-- Slide 1 -->
-          <div class="carousel-slide">
-            <div class="slide-icon"><i class="fas fa-puzzle-piece"></i></div>
-            <h3>Estrutura Completa</h3>
-            <p>Trilha de estudos pronta, cronograma semanal organizado e materiais selecionados para que você comece com o pé direito, sem perder tempo com planejamento.</p>
-            <span class="slide-tag">Organização</span>
-          </div>
-          <!-- Slide 2 -->
-          <div class="carousel-slide">
-            <div class="slide-icon"><i class="fas fa-comments"></i></div>
-            <h3>Mentoria Estratégica</h3>
-            <p>Encontros semanais ao vivo, grupo VIP de WhatsApp e acompanhamento contínuo para ajustar a rota, esclarecer dúvidas e manter a motivação em alta.</p>
-            <span class="slide-tag">Suporte ativo</span>
-          </div>
-          <!-- Slide 3 -->
-          <div class="carousel-slide">
-            <div class="slide-icon"><i class="fas fa-brain"></i></div>
-            <h3>Prática Inteligente</h3>
-            <p>Simulados com direcionamento por etapas, revisões guiadas e um aplicativo de questões com milhares de exercícios para consolidar o aprendizado.</p>
-            <span class="slide-tag">Performance</span>
-          </div>
-          <!-- Slide 4 -->
-          <div class="carousel-slide">
-            <div class="slide-icon"><i class="fas fa-bullseye"></i></div>
-            <h3>Acompanhamento Individual</h3>
-            <p>No plano Elite, você conta com mentoria individualizada, ajustes personalizados e prioridade no suporte para maximizar seus resultados.</p>
-            <span class="slide-tag">Exclusividade</span>
-          </div>
+      <div class="section-tag reveal"><i class="fas fa-compass"></i> passo a passo</div>
+      <h2 class="reveal">Como funciona a Jornada da Aprovação</h2>
+      <p class="subhead reveal">Um método testado que conduz você do zero até a aprovação, sem improvisos.</p>
+      <div class="jornada-steps">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h3>Diagnóstico</h3>
+          <p>Começamos com uma avaliação para entender seu nível e objetivo. A Jornada é personalizada para sua realidade.</p>
         </div>
-      </div>
-
-      <div class="carousel-controls">
-        <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-        <div class="carousel-dots" id="carouselDots"></div>
-        <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h3>Cronograma inteligente</h3>
+          <p>Receba um plano de estudos diário com metas claras. Você estuda na ordem certa, sem perder tempo.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h3>Material + prática</h3>
+          <p>Acesse videoaulas, PDFs, questões e simulados alinhados ao cronograma. Cada recurso tem um propósito.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">4</div>
+          <h3>Revisão e ajustes</h3>
+          <p>Revisões programadas e feedback contínuo garantem que você fixe o conteúdo e corrija a rota se necessário.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== PLANOS ====== -->
+  <!-- DEPOIMENTOS -->
+  <section class="section-depoimentos">
+    <div class="container">
+      <h2 class="reveal">Quem já viveu a Jornada</h2>
+      <p class="subhead reveal">Histórias reais de quem transformou a preparação e conquistou mais tempo e foco com a VULP+.</p>
+      <div class="depoimentos-grid">
+        <div class="depoimento-card reveal">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <blockquote>"Depois que entrei, estou ganhando tempo, sei exatamente o que estudar todos os dias. A Jornada da Aprovação me deu direção e foco. Recomendo!"</blockquote>
+          <div class="autor">
+            <div class="avatar-placeholder">AC</div>
+            <div><div class="nome">Ana C.</div><div class="cargo">Aprovada para a UFMG</div></div>
+          </div>
+        </div>
+        <div class="depoimento-card reveal">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <blockquote>"Nunca estudei tão organizado. A Jornada me mostra o que fazer, e eu só executo. Minha ansiedade caiu e a produtividade disparou."</blockquote>
+          <div class="autor">
+            <div class="avatar-placeholder">RS</div>
+            <div><div class="nome">Rafael S.</div><div class="cargo">Aprovado para o IFSP</div></div>
+          </div>
+        </div>
+        <div class="depoimento-card reveal">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <blockquote>"Eu vivia perdida entre tantos conteúdos. Agora sei o que priorizar e estudo com confiança. A Jornada é um divisor de águas."</blockquote>
+          <div class="autor">
+            <div class="avatar-placeholder">ML</div>
+            <div><div class="nome">Mariana L.</div><div class="cargo">Aprovada para a UFRJ</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANOS -->
   <section class="section-plans" id="planos">
     <div class="container">
-      <div class="section-tag reveal"><i class="fas fa-crown"></i> escolha seu plano</div>
-      <h2 class="reveal">Invista na sua aprovação</h2>
-      <p class="subhead reveal">Comece com o VULP Start, acelere com o Focus ou tenha exclusividade total com o Elite.</p>
+      <div class="section-tag reveal"><i class="fas fa-crown"></i> escolha sua jornada</div>
+      <h2 class="reveal">Invista na sua aprovação com a Jornada certa</h2>
+      <p class="subhead reveal">Comece com o Plano Básico e tenha a Jornada completa, ou vá para o Premium e ganhe acompanhamento estratégico.</p>
 
       <div class="plans-grid">
-        <!-- START -->
+        <!-- PLANO BÁSICO -->
         <div class="plan-card reveal">
-          <div class="plan-name">VULP START</div>
-          <div class="plan-sub">Ideal para quem está começando ou ainda não tem uma rotina de estudos.</div>
-          <div class="price">R$ 39,00 <small>/mês</small></div>
+          <div class="plan-icon"><i class="fas fa-rocket"></i></div>
+          <div class="plan-name">VULP BÁSICO</div>
+          <div class="plan-sub">Autonomia com a Jornada da Aprovação completa.</div>
+          <div class="price">R$ 29,90 <small>/mês</small></div>
           <div class="divider"></div>
           <ul>
-            <li><i class="fas fa-check"></i> Trilha de estudos pronta</li>
-            <li><i class="fas fa-check"></i> Cronograma semanal organizado</li>
-            <li><i class="fas fa-check"></i> Material de leitura completo</li>
-            <li><i class="fas fa-check"></i> Orientações para começar</li>
-            <li><i class="fas fa-check"></i> Indicação de aulas no YouTube</li>
-            <li><i class="fas fa-check"></i> Aplicativo de questões</li>
-            <li><i class="fas fa-check"></i> Aplicativo de estudos</li>
+            <li><i class="fas fa-check"></i> Jornada da Aprovação com metas diárias</li>
+            <li><i class="fas fa-check"></i> Cronograma estratégico personalizado</li>
+            <li><i class="fas fa-check"></i> Conteúdo completo (PDFs, videoaulas)</li>
+            <li><i class="fas fa-check"></i> Banco de questões com feedback</li>
+            <li><i class="fas fa-check"></i> Simulados com correção</li>
+            <li><i class="fas fa-check"></i> Ferramentas de organização</li>
+            <li><i class="fas fa-check"></i> Atualizações de editais</li>
           </ul>
-          <button class="btn-plan" onclick="window.open('https://wa.me/5583999121539?text=Olá,%20quero%20saber%20mais%20sobre%20o%20plano%20VULP%20START!','_blank')">
-            <i class="fab fa-whatsapp"></i> Começar agora
-          </button>
+          <button class="btn-saiba" onclick="abrirModal('basico')"><i class="fas fa-circle-info"></i> Saiba mais</button>
         </div>
 
-        <!-- FOCUS -->
+        <!-- PLANO PREMIUM -->
         <div class="plan-card destaque reveal">
-          <span class="badge"><i class="fas fa-fire"></i> Mais escolhido</span>
-          <div class="plan-name">VULP FOCUS</div>
-          <div class="plan-sub">Nosso plano mais completo para quem quer aceleração e suporte estratégico.</div>
-          <div class="price">R$ 89,00 <small>/mês</small></div>
+          <div class="plan-icon"><i class="fas fa-trophy"></i></div>
+          <span class="plan-badge"><i class="fas fa-star"></i> Mais completo</span>
+          <div class="plan-name">VULP PREMIUM</div>
+          <div class="plan-sub">A Jornada completa com acompanhamento e suporte exclusivo.</div>
+          <div class="price">R$ 89,90 <small>/mês</small></div>
           <div class="divider"></div>
           <ul>
-            <li><i class="fas fa-check"></i> Tudo do VULP START</li>
-            <li><i class="fas fa-check"></i> Materiais exclusivos</li>
-            <li><i class="fas fa-check"></i> Revisões guiadas</li>
-            <li><i class="fas fa-check"></i> Simulados com direcionamento</li>
-            <li><i class="fas fa-check"></i> Encontros semanais ao vivo</li>
-            <li><i class="fas fa-check"></i> Grupo VIP de WhatsApp</li>
-            <li><i class="fas fa-check"></i> Acompanhamento de dúvidas</li>
-          </ul>
-          <button class="btn-plan" onclick="window.open('https://wa.me/5583999121539?text=Olá,%20quero%20saber%20mais%20sobre%20o%20plano%20VULP%20FOCUS!','_blank')">
-            <i class="fab fa-whatsapp"></i> Quero acelerar
-          </button>
-        </div>
-
-        <!-- ELITE -->
-        <div class="plan-card reveal">
-          <div class="plan-name">VULP ELITE</div>
-          <div class="plan-sub">O plano premium com mentoria individualizada e vagas limitadas.</div>
-          <div class="price">R$ 197,00 <small>/mês</small></div>
-          <div class="divider"></div>
-          <ul>
-            <li><i class="fas fa-check"></i> Tudo do VULP FOCUS</li>
-            <li><i class="fas fa-check"></i> Encontro direto com mentor</li>
-            <li><i class="fas fa-check"></i> Mentor individualizado</li>
-            <li><i class="fas fa-check"></i> Ajustes personalizados</li>
-            <li><i class="fas fa-check"></i> Prioridade no suporte</li>
-            <li><i class="fas fa-check"></i> Orientações estratégicas</li>
+            <li><i class="fas fa-check"></i> Tudo do Plano Básico</li>
+            <li><i class="fas fa-check"></i> Encontros quinzenais em grupo</li>
+            <li><i class="fas fa-check"></i> Suporte via WhatsApp com prioridade</li>
+            <li><i class="fas fa-check"></i> Orientação de estudos personalizada</li>
             <li><i class="fas fa-check"></i> Correção de rota contínua</li>
           </ul>
-          <span class="vagas-limitadas"><i class="fas fa-exclamation-triangle"></i> Vagas limitadas</span>
-          <button class="btn-plan" onclick="window.open('https://wa.me/5583999121539?text=Olá,%20quero%20saber%20mais%20sobre%20o%20plano%20VULP%20ELITE!','_blank')">
-            <i class="fab fa-whatsapp"></i> Garantir vaga
-          </button>
+          <button class="btn-saiba" onclick="abrirModal('premium')"><i class="fas fa-circle-info"></i> Saiba mais</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== FAQ ====== -->
+  <!-- FAQ -->
   <section class="section-faq" id="faq">
     <div class="container">
-      <h2 class="reveal">Perguntas frequentes</h2>
+      <h2 class="reveal">Dúvidas sobre a Jornada da Aprovação</h2>
       <div class="faq-grid">
         <div class="faq-item active reveal">
+          <h4><span>O que é a Jornada da Aprovação?</span> <i class="fas fa-chevron-down"></i></h4>
+          <p>É um método de estudos estruturado que organiza toda a sua preparação em etapas, metas diárias e objetivos claros. Você não precisa decidir o que estudar — a plataforma faz isso por você.</p>
+        </div>
+        <div class="faq-item reveal">
           <h4><span>Como funciona o período de teste?</span> <i class="fas fa-chevron-down"></i></h4>
           <p>Você pode cancelar nos primeiros 7 dias e receber 100% do valor de volta, sem burocracia.</p>
         </div>
@@ -1093,23 +1095,19 @@
           <p>Sim! Você pode fazer upgrade ou downgrade a qualquer momento, com ajuste proporcional.</p>
         </div>
         <div class="faq-item reveal">
-          <h4><span>O material é atualizado?</span> <i class="fas fa-chevron-down"></i></h4>
-          <p>Sim, todos os materiais e trilhas são revisados mensalmente para acompanhar os editais.</p>
-        </div>
-        <div class="faq-item reveal">
-          <h4><span>Como acesso os conteúdos?</span> <i class="fas fa-chevron-down"></i></h4>
-          <p>Você recebe acesso imediato à plataforma VULP+ com todos os materiais e ferramentas.</p>
+          <h4><span>Como funciona o acompanhamento no Premium?</span> <i class="fas fa-chevron-down"></i></h4>
+          <p>Você participa de encontros quinzenais em grupo e tem acesso a um canal exclusivo no WhatsApp para tirar dúvidas com a equipe e receber orientações personalizadas.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ====== CTA FINAL ====== -->
+  <!-- CTA FINAL -->
   <section class="footer-cta">
     <div class="container">
-      <h2 class="reveal">Sua aprovação começa aqui</h2>
-      <p class="reveal">Escolha o plano VULP+ e dê o primeiro passo rumo à sua vaga.</p>
-      <a href="#planos" class="btn-primary reveal"><i class="fas fa-arrow-right"></i> Ver planos agora</a>
+      <h2 class="reveal">Sua aprovação está a um passo</h2>
+      <p class="reveal">Escolha a Jornada da Aprovação e transforme sua preparação. Estude com direção, foco e acompanhamento.</p>
+      <a href="#planos" class="btn-primary reveal"><i class="fas fa-arrow-right"></i> Quero começar minha jornada</a>
     </div>
   </section>
 
@@ -1119,10 +1117,64 @@
     </div>
   </footer>
 
-  <!-- ====== SCRIPTS ====== -->
+  <!-- MODAL BÁSICO -->
+  <div class="modal-overlay" id="modalBasico">
+    <div class="modal">
+      <button class="modal-close" onclick="fecharModal('modalBasico')">&times;</button>
+      <h2><i class="fas fa-rocket"></i> Plano Básico</h2>
+      <div class="modal-sub">A Jornada da Aprovação completa para você estudar com autonomia.</div>
+      <ul class="modal-features">
+        <li><i class="fas fa-check"></i> <strong>Jornada da Aprovação</strong> – cronograma estratégico com metas diárias e objetivos claros</li>
+        <li><i class="fas fa-check"></i> Conteúdo completo por disciplinas e assuntos</li>
+        <li><i class="fas fa-check"></i> Banco de questões com centenas de exercícios e feedback</li>
+        <li><i class="fas fa-check"></i> Simulados no estilo dos concursos com correção</li>
+        <li><i class="fas fa-check"></i> Material de apoio (PDFs, resumos, mapas mentais)</li>
+        <li><i class="fas fa-check"></i> Videoaulas organizadas por etapa da Jornada</li>
+        <li><i class="fas fa-check"></i> Notícias e atualizações sobre editais</li>
+        <li><i class="fas fa-check"></i> Ferramentas de produtividade e acompanhamento</li>
+      </ul>
+      <div class="modal-description">
+        <p><strong>Jornada da Aprovação: seu guia do zero até a prova</strong><br>
+        Siga um cronograma estratégico com metas e objetivos organizados para que você estude na ordem certa, sem perder tempo decidindo o que fazer a cada dia. A plataforma define cada passo: teoria, prática, revisão e simulado.</p>
+        <p><strong>Por que escolher o Plano Básico?</strong><br>
+        O Plano Básico foi desenvolvido para quem deseja uma preparação completa, organizada e eficiente, sem precisar gastar horas montando cronogramas ou procurando materiais em diferentes lugares.</p>
+        <p>O grande diferencial é a Jornada da Aprovação, que organiza toda a sua preparação em etapas, metas e objetivos. Basta seguir a sequência proposta pela plataforma para avançar de forma consistente em todos os conteúdos cobrados nos concursos.</p>
+        <p>Assim, você não precisa se preocupar com perguntas como "o que estudar hoje?" ou "qual matéria vem depois?". A plataforma organiza sua jornada enquanto você concentra seus esforços apenas em cumprir as metas diárias.</p>
+        <p>Todo o conteúdo foi pensado para que você tenha, em um único ambiente, os materiais, questões, simulados e recursos necessários para construir uma preparação sólida até o dia da prova.</p>
+      </div>
+      <a href="https://wa.me/5583999121539?text=Olá,%20quero%20saber%20mais%20sobre%20o%20plano%20VULP%20BÁSICO!" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Quero começar agora</a>
+    </div>
+  </div>
+
+  <!-- MODAL PREMIUM -->
+  <div class="modal-overlay" id="modalPremium">
+    <div class="modal">
+      <button class="modal-close" onclick="fecharModal('modalPremium')">&times;</button>
+      <h2><i class="fas fa-trophy"></i> Plano Premium</h2>
+      <div class="modal-sub">A Jornada da Aprovação com acompanhamento contínuo e suporte exclusivo.</div>
+      <ul class="modal-features">
+        <li><i class="fas fa-check"></i> Tudo do Plano Básico (Jornada, conteúdo, questões, simulados, material, videoaulas, notícias, ferramentas)</li>
+        <li><i class="fas fa-check"></i> <strong>Acompanhamento quinzenal</strong> – encontros em grupo para alinhamento e orientação</li>
+        <li><i class="fas fa-check"></i> <strong>Suporte via WhatsApp</strong> – canal exclusivo para dúvidas e suporte rápido</li>
+        <li><i class="fas fa-check"></i> Orientação de estudos personalizada e ajustes de rota</li>
+        <li><i class="fas fa-check"></i> Atendimento prioritário – suas dúvidas respondidas com agilidade</li>
+      </ul>
+      <div class="modal-description">
+        <p><strong>Jornada da Aprovação com suporte estratégico</strong><br>
+        Siga um cronograma estratégico com metas e objetivos definidos para estudar de forma organizada e sem perder tempo planejando. A diferença do Premium é o acompanhamento humano que mantém sua constância e corrige dificuldades em tempo real.</p>
+        <p><strong>Por que escolher o Plano Premium?</strong><br>
+        O Plano Premium foi criado para quem deseja ir além de uma plataforma de estudos e contar com um acompanhamento contínuo durante toda a preparação.</p>
+        <p>Além de todos os recursos do Plano Básico, você terá acesso a encontros quinzenais em grupo e suporte via WhatsApp para esclarecer dúvidas, receber orientações e manter o foco ao longo da jornada.</p>
+        <p>Assim como no Plano Básico, a Jornada da Aprovação será o seu guia de estudos. Você não precisa elaborar cronogramas complexos nem decidir diariamente o que estudar. Basta seguir as metas e objetivos definidos pela plataforma, enquanto recebe acompanhamento para superar dificuldades e manter um ritmo consistente.</p>
+        <p>A proposta é simples: você dedica seu tempo a estudar, enquanto a plataforma organiza sua preparação e oferece o suporte necessário para que sua evolução seja contínua até a conquista da aprovação.</p>
+      </div>
+      <a href="https://wa.me/5583999121539?text=Olá,%20quero%20saber%20mais%20sobre%20o%20plano%20VULP%20PREMIUM!" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Garantir minha vaga</a>
+    </div>
+  </div>
+
   <script>
+    // Reveal on scroll
     (function() {
-      // ----- REVEAL ON SCROLL -----
       const reveals = document.querySelectorAll('.reveal');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1132,104 +1184,10 @@
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
       reveals.forEach(el => observer.observe(el));
+    })();
 
-      // ----- CARROSSEL -----
-      const track = document.getElementById('carouselTrack');
-      const slides = track.querySelectorAll('.carousel-slide');
-      const totalSlides = slides.length;
-      let currentIndex = 0;
-      let autoplayInterval = null;
-
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const dotsContainer = document.getElementById('carouselDots');
-
-      // Criar dots
-      slides.forEach((_, idx) => {
-        const dot = document.createElement('button');
-        dot.classList.add('dot');
-        if (idx === 0) dot.classList.add('active');
-        dot.setAttribute('data-index', idx);
-        dot.addEventListener('click', () => goToSlide(idx));
-        dotsContainer.appendChild(dot);
-      });
-
-      const dots = dotsContainer.querySelectorAll('.dot');
-
-      function goToSlide(index) {
-        if (index < 0) index = totalSlides - 1;
-        if (index >= totalSlides) index = 0;
-        currentIndex = index;
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === currentIndex);
-        });
-      }
-
-      function nextSlide() {
-        goToSlide(currentIndex + 1);
-      }
-
-      function prevSlide() {
-        goToSlide(currentIndex - 1);
-      }
-
-      function startAutoplay() {
-        if (autoplayInterval) clearInterval(autoplayInterval);
-        autoplayInterval = setInterval(nextSlide, 5000);
-      }
-
-      function pauseAutoplay() {
-        if (autoplayInterval) {
-          clearInterval(autoplayInterval);
-          autoplayInterval = null;
-        }
-      }
-
-      // Eventos dos botões
-      nextBtn.addEventListener('click', () => {
-        pauseAutoplay();
-        nextSlide();
-        startAutoplay();
-      });
-
-      prevBtn.addEventListener('click', () => {
-        pauseAutoplay();
-        prevSlide();
-        startAutoplay();
-      });
-
-      // Pausar no hover do carrossel
-      const carouselWrapper = document.querySelector('.carousel-wrapper');
-      carouselWrapper.addEventListener('mouseenter', pauseAutoplay);
-      carouselWrapper.addEventListener('mouseleave', startAutoplay);
-
-      // Toque (swipe) para mobile
-      let touchStartX = 0;
-      let touchEndX = 0;
-
-      carouselWrapper.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        pauseAutoplay();
-      }, { passive: true });
-
-      carouselWrapper.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-        if (Math.abs(diff) > 50) {
-          if (diff > 0) {
-            nextSlide();
-          } else {
-            prevSlide();
-          }
-        }
-        startAutoplay();
-      }, { passive: true });
-
-      // Iniciar autoplay
-      startAutoplay();
-
-      // ----- FAQ TOGGLE -----
+    // FAQ toggle
+    (function() {
       const faqItems = document.querySelectorAll('.faq-item');
       faqItems.forEach(item => {
         item.addEventListener('click', function() {
@@ -1240,8 +1198,45 @@
           }
         });
       });
-
     })();
+
+    // Modal functions
+    function abrirModal(tipo) {
+      const id = tipo === 'basico' ? 'modalBasico' : 'modalPremium';
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function fecharModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Fechar modal ao clicar no overlay
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // Fechar com tecla ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      }
+    });
   </script>
 </body>
 </html>
